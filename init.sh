@@ -112,10 +112,10 @@ EOF
 
   # 下载需要的应用
   if [ -z "$DASHBOARD_VERSION" ] || [[ "$DASHBOARD_VERSION" =~ 0\.20\.13$ ]]; then
-    wget -O /tmp/dashboard.zip ${GH_PROXY}https://github.com/nap0o/nezha-dashboard/releases/download/v0.20.13/dashboard-linux-$ARCH.zip
+    wget -O /tmp/dashboard.zip ${GH_PROXY}https://github.com/naiba/nezha/releases/download/v0.19.6/dashboard-linux-$ARCH.zip
   elif [[ "$DASHBOARD_VERSION" =~ 0\.[0-9]{1,2}\.[0-9]{1,2}$ ]]; then
     DASHBOARD_LATEST=$(sed 's/v//; s/^/v&/' <<< "$DASHBOARD_VERSION")
-    wget -O /tmp/dashboard.zip ${GH_PROXY}https://github.com/naiba/nezha/releases/download/$DASHBOARD_LATEST/dashboard-linux-$ARCH.zip
+    wget -O /tmp/dashboard.zip ${GH_PROXY}https://github.com/naiba/nezha/releases/download/v0.19.6/dashboard-linux-$ARCH.zip
   else
     error "The DASHBOARD_VERSION variable should be in a format like v0.00.00, please check."
   fi
